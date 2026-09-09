@@ -2,10 +2,13 @@ package com.amoney.studentManagementSystem.serviceImpl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.amoney.studentManagementSystem.entity.student;
 import com.amoney.studentManagementSystem.repository.studentRepository;
 import com.amoney.studentManagementSystem.service.studentService;
 
+@Service
 public class studentServiceImpl implements studentService {
 
     private studentRepository StudentRepository;
