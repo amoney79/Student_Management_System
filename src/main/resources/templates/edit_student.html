@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+          crossorigin="anonymous">
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Student Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/students}">Student Managgement</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+<br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                 <h2 class="text-center">Update Student</h2>
+                <div class="card-body">
+                    <form th:action="@{/students/{id} (id=${student.id})}" th:object="${student}" method="post">
+                        <div class="form-group">
+                            <label for="firstName">Student First Name</label>
+                            <input type="text" th:field="*{firstName}" class="form-control" 
+                                   placeholder="Enter First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Student Last Name</label>
+                            <input type="text" th:field="*{lastName}" class="form-control" 
+                                   placeholder="Enter Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Student Email</label>
+                            <input type="email" th:field="*{email}" class="form-control" 
+                                   placeholder="Enter Email" required>
+                        </div>
+                        <div class="footer-body">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div> <!-- close card-body -->
+            </div> <!-- close col -->
+        </div> <!-- close row -->
+    </div> <!-- close container -->
+</body>
+</html>

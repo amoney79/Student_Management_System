@@ -41,4 +41,29 @@ public class studentController {
         StudentService.saveStudent(Student);
         return "redirect:/students";
     }
+
+    //handler method to handle edit student request
+    @GetMapping("/students/edit/{id}")
+    public String editStudentForm(@PathVariable Long id, Model model) {
+        model.addAttribute("student", StudentService.getStudentById(id));
+        return "edit_student";
+    }
+
+    @PostMapping("/students/{id}")
+    //handler method to handle update request
+    public String updateStudent(@PathVariable Long id,
+        @ModelAttribute("student") student Student,
+        Model model ) {
+
+            //getStudent from database by id
+            Student existingStudent = StudentService.getStudentById(id);
+            existingStudent.setId(id);
+            existingStudent.setFirstName(student.getfirstName());
+            existingStudent.setLastName(student.getlastName());
+            existingStudent.setEmail(student.getemail());
+
+            //save updated student object
+            StudentService.updateStudent(existingStudent);
+            return "redirect:/students";
+    }
 }
