@@ -1,5 +1,6 @@
 package com.amoney.studentManagementSystem.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +13,7 @@ import com.amoney.studentManagementSystem.service.studentService;
 @Controller
 public class studentController {
     
+    @Autowired
     private studentService StudentService;
 
     public studentController(studentService StudentService) {
