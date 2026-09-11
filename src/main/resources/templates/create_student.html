@@ -10,10 +10,33 @@
           crossorigin="anonymous">
 </head>
 <body>
+
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Student Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/students}">Student Managgement</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+<br>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-                <h2 class="text-center">Create New Student</h2>
+                 <h2 class="text-center">Create New Student</h2>
                 <div class="card-body">
                     <form th:action="@{/students}" th:object="${student}" method="post">
                         <div class="form-group">
