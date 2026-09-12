@@ -1,10 +1,8 @@
 package com.amoney.studentManagementSystem.serviceImpl;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.amoney.studentManagementSystem.entity.student;
 import com.amoney.studentManagementSystem.repository.studentRepository;
 import com.amoney.studentManagementSystem.service.studentService;
@@ -32,7 +30,7 @@ public class studentServiceImpl implements studentService {
 	}
 
 	@Override
-	public student getStudentById(long id){
+	public student getStudentById(Long id){
 		return StudentRepository.findById(id).get();
 	}
 
