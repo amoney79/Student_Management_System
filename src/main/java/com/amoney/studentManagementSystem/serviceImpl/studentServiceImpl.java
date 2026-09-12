@@ -31,7 +31,8 @@ public class studentServiceImpl implements studentService {
 		return StudentRepository.save(Student);
 	}
 
-	public student getStudent(student Student){
+	@Override
+	public student getStudentById(long id){
 		return StudentRepository.findById(id).get();
 	}
 
