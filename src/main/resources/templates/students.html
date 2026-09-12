@@ -61,7 +61,7 @@
                             <td th:text="${student.email}"></td>
                             <td>
                                 <!-- Example action buttons -->
-                                <a th:href="@{'/students/update/' + ${student.id}}" class="btn btn-warning btn-sm">Update</a>
+                                <a th:href="@{'/students/edit/' + ${student.id}}" class="btn btn-warning btn-sm">Edit</a>
                                 <a th:href="@{'/students/delete/' + ${student.id}}" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>

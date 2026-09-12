@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
-
 import com.amoney.studentManagementSystem.entity.student;
 import com.amoney.studentManagementSystem.service.studentService;
 
@@ -58,9 +57,9 @@ public class studentController {
             //getStudent from database by id
             Student existingStudent = StudentService.getStudentById(id);
             existingStudent.setId(id);
-            existingStudent.setFirstName(student.getfirstName());
-            existingStudent.setLastName(student.getlastName());
-            existingStudent.setEmail(student.getemail());
+            existingStudent.setFirstName(Student.getFirstName());
+            existingStudent.setLastName(Student.getLastName());
+            existingStudent.setEmail(Student.getEmail());
 
             //save updated student object
             StudentService.updateStudent(existingStudent);
